@@ -1,0 +1,36 @@
+@charset "utf-8";
+.l-header {
+  .header__inner {
+    padding: 60px 0;
+    .header__logo {
+      height: calc(90vh - 120px);
+      position: relative;
+      &::before {
+        content: "";
+        background-image: url(/images/top_index_bg.jpg);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: cover;
+        width: 80%;
+        max-width: 1270px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+      }
+    }
+    .header__nav {
+      display: flex;
+      justify-content: flex-end;
+      .header__navList {
+        display: flex;
+        padding: 30px 0;
+        > li:first-child {
+          margin-left: 0;
+        }
+        li {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

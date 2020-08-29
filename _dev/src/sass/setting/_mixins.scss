@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+// レファレンスポイントより大きい画面幅のスタイル
+@mixin breakPC {
+    @media screen and (min-width: $BREAK_POINT + 1px) {
+        @content;
+    }
+}
+
+// ブレークポイントより大きく、レファレンスポイントより小さい画面幅のスタイル
+@mixin breakTAB {
+    @media screen
+    and (min-width: $BREAK_POINT + 1px)
+    and (max-width: $CONTENTS_WIDTH) {
+        @content;
+    }
+}
+
+// ブレークポイント以下の画面幅のスタイル
+//（※基本的にSPでだけ表示・非表示などで使用）
+@mixin breakSP {
+    @media screen and (max-width: $BREAK_POINT) {
+        @content;
+    }
+}
+
+// 指定要素直下の
+// 最初の子要素に、margin-top: 0;
+// 最後の子要素に、margin-bottom: 0;
+@mixin reset-margin {
+    & > *:first-child {
+        margin-top: 0 !important;
+    }
+    & > *:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+// 指定要素のhoverとfocus時のスタイル指定
+@mixin hover {
+    @include breakPC(){
+        &:hover,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+// コンテンツのinnerの最大幅指定と画面中央配置指定
+@mixin contentWidth {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    max-width: calc(#{$CONTENTS_WIDTH} + 30px);
+
+    @include breakPC(){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// bold指定
+@mixin bold() {
+    font-weight: bold;
+    font-family: $FONT_FAMILY_YUGOTHIC_BOLD;
+}
+
+// 矢印
+@mixin iconArrow($transform, $color) {
+    border-top: 1px solid $color;
+    border-right: 1px solid $color;
+    transform: rotate($transform + deg);
+}
+
+// ドット背景
+@mixin backDot {
+    background-size: 13px 13px;
+    background-image: radial-gradient(#7E98B1 5%,transparent 11%);
+    background-color: transparent;
+
+    @include breakSP() {
+        opacity: .5;
+    }
+}
+
+// =============================================
+// Flex display
+// =============================================
+@mixin flex($FD:null, $FW:null, $AI: null, $JC: null, $AC: null) {
+  display: flex;
+  align-items: $AI;
+  align-content: $AC;
+  flex-direction: $FD;
+  flex-wrap: $FW;
+  justify-content: $JC;
+}
+
+// =============================================
+// transition プロパティ
+// =============================================
+@mixin transition($PROPERTY:null, $DURATION:null, $TIMING:null, $DELAY:null){
+  transition:$PROPERTY $DURATION+s $TIMING $DELAY+s;
+}
+
+// =============================================
+// gulp-base64-inline用 mixin
+// =============================================
+@mixin base64($fileName) {
+    background-image: inline-image($fileName + ".png");
+}

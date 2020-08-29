@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+$BASE_COLOR: #69C9F3;
+$SUB_COLOR: #F2F2F2;
+$ACCENT_COLOR: #003366;
+$BG_COLOR: #333;
+$ATTENTION_COLOR: #C90101;
+
+
+$FONT_COLOR: #333333;
+$LINK_COLOR: #3498DB;
+
+$MAX_CONTENTS_WIDTH: 1600px;
+$CONTENTS_WIDTH: 1180px;
+$REFERENCE_POINT: 835px;
+$BREAK_POINT: 834px;
+
+$TRANSITION: .3s;
+$OPACITY: .6;
+$TRACKING: 0.05em;
+
+$FONT_FAMILY_SITE_BASE: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$FONT_FAMILY_DIDACT: 'Didact Gothic', sans-serif;
+
+
+// z-index管理
+$Z_INDEX: (
+    header: 100,
+    overlay: 99,
+    gdpr: 98,
+    modal: 100
+);

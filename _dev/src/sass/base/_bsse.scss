@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+    color: $FONT_COLOR;
+    font-family: $FONT_FAMILY_SITE_BASE;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing : 0.05em ;
+    line-height: 1.8;
+    word-wrap: break-word;
+    position: relative;
+    &.is-fixed {
+        overflow: hidden;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 300;
+}
+
+p {
+    margin: 0 0 15px;
+    @include breakPC() {
+        margin-bottom: 20px;
+    }
+}
+
+ul,
+ol,
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+dt,
+dd {
+    margin: 0;
+}
+
+a {
+    color: $LINK_COLOR;
+    text-decoration: none;
+    img {
+        @include hover {
+            opacity: .6;
+        }
+    }
+}
+
+a,
+button,
+input,
+textarea,
+select {
+    &:focus {
+        outline: $BASE_COLOR solid 2px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+table {
+    margin: 0;
+    width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-collapse:collapse;
+}
+
+// IEでのテーブル表示対応
+@media all and (-ms-high-contrast: none){
+    table {
+        table-layout: fixed;
+    }
+}
+
+th,
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+label,
+select {
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+}
+
+select::-ms-expand{
+    display: none;
+}
+
+.iconBlank {
+    margin: 0 0 0 4px;
+    stroke: $FONT_COLOR;
+    position: relative;
+    top: -5px;
+    right: 0;
+}
