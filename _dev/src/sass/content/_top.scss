@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.top-aboutUS,
+// .top-aboutUS,
 .top-case,
 .top-chosen,
 .top-qa {
@@ -87,15 +87,12 @@
 .top-aboutUS {
   &__inner {
     position: relative;
-  }
-  &__intro {
-    position: relative;
     &::before {
       content: "";
       position: absolute;
       width: 40%;
-      height: calc(100% + 160px);
-      bottom: -80px;
+      height: 100%;
+      bottom: 80px;
       left: -20px;
       background-size: 12px 12px;
       background-image: radial-gradient(#888FA7 5%,transparent 11%);
@@ -103,36 +100,55 @@
       opacity: .6;
       z-index: -1;
     }
+  }
+  &__intro {
+    position: relative;
+    padding: 0 60px;
+    &::before {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: $FONT_COLOR;
+      position: absolute;
+      left: 30px;
+    }
+    &::after {
+      content: "";
+      width: 15px;
+      height: 1px;
+      background-color: $FONT_COLOR;
+      position: absolute;
+      bottom: 5px;
+      left: 28px;
+      transform: rotate(-45deg);
+    }
     &__inner {
       padding: 0 40px;
-      &::before {
-        content: "";
-        width: 1px;
-        height: 100%;
-        background-color: $FONT_COLOR;
-        position: absolute;
-        left: 0;
-      }
-      &::after {
-        content: "";
-        width: 15px;
-        height: 1px;
-        background-color: $FONT_COLOR;
-        position: absolute;
-        bottom: 5px;
-        left: -2px;
-        transform: rotate(-45deg);
-      }
+      position: relative;
+      @include contentWidth();
     }
-
   }
   &__secHdg {
     font-size: 1.1rem;
     font-family: $FONT_FAMILY_DIDACT;
     position: absolute;
     top: 55px;
-    left: -18px;
+    left: 0px;
     transform: rotate(90deg);
+  }
+  &__service {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 80px;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1 1 100%;
+      background-color: #000;
+      color: #fff;
+      padding: 137px 40px 40px;
+    }
   }
 }
 // ----------------------------

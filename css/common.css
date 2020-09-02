@@ -645,14 +645,12 @@ select::-ms-expand {
   opacity: 0;
 }
 
-.top-aboutUS,
 .top-case,
 .top-chosen,
 .top-qa {
   margin-top: 80px;
 }
 
-.top-aboutUS__inner,
 .top-case__inner,
 .top-chosen__inner,
 .top-qa__inner {
@@ -737,55 +735,79 @@ select::-ms-expand {
   position: relative;
 }
 
-.top-aboutUS__intro {
-  position: relative;
-}
-
-.top-aboutUS__intro::before {
+.top-aboutUS__inner::before {
   content: "";
   position: absolute;
-  bottom: -80px;
+  bottom: 80px;
   left: -20px;
   z-index: -1;
   width: 40%;
-  height: calc(100% + 160px);
+  height: 100%;
   background-color: transparent;
   background-image: radial-gradient(#888fa7 5%, transparent 11%);
   background-size: 12px 12px;
   opacity: 0.6;
 }
 
-.top-aboutUS__intro__inner {
-  padding: 0 40px;
+.top-aboutUS__intro {
+  position: relative;
+  padding: 0 60px;
 }
 
-.top-aboutUS__intro__inner::before {
+.top-aboutUS__intro::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 30px;
   width: 1px;
   height: 100%;
   background-color: #333333;
 }
 
-.top-aboutUS__intro__inner::after {
+.top-aboutUS__intro::after {
   content: "";
   position: absolute;
   bottom: 5px;
-  left: -2px;
+  left: 28px;
   width: 15px;
   height: 1px;
   background-color: #333333;
   transform: rotate(-45deg);
 }
 
+.top-aboutUS__intro__inner {
+  position: relative;
+  width: 100%;
+  max-width: calc(1180px + 30px);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 40px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .top-aboutUS__secHdg {
   position: absolute;
   top: 55px;
-  left: -18px;
+  left: 0;
   font-size: 1.1rem;
   font-family: "Didact Gothic", sans-serif;
   transform: rotate(90deg);
+}
+
+.top-aboutUS__service {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 80px;
+}
+
+.top-aboutUS__service__item {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 137px 40px 40px;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 .top-chosen {
@@ -1015,7 +1037,6 @@ select::-ms-expand {
   .l-footer .footer__info .footer__navList > li a:focus {
     opacity: 0.6;
   }
-  .top-aboutUS__inner,
   .top-case__inner,
   .top-chosen__inner,
   .top-qa__inner {
@@ -1031,6 +1052,10 @@ select::-ms-expand {
   .top-btnLink a:hover::before,
   .top-btnLink a:focus::before {
     border-color: #ffffff;
+  }
+  .top-aboutUS__intro__inner {
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .top-case__inner {
     padding-right: 20px;
