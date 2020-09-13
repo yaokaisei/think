@@ -15,14 +15,14 @@ body {
     min-height: 100vh;
     color: $FONT_COLOR;
     font-family: $FONT_FAMILY_SITE_BASE;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 300;
     letter-spacing : 0.05em ;
     line-height: 1.8;
     word-wrap: break-word;
     position: relative;
-    &.is-fixed {
-        overflow: hidden;
+    @include breakPC() {
+        font-size: 1.4rem;
     }
 }
 

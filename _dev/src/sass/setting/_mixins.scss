@@ -27,7 +27,7 @@
 // 指定要素直下の
 // 最初の子要素に、margin-top: 0;
 // 最後の子要素に、margin-bottom: 0;
-@mixin reset-margin {
+@mixin resetMargin {
     & > *:first-child {
         margin-top: 0 !important;
     }

@@ -1,33 +1,57 @@
 @charset "utf-8";
 
 .l-footer {
-  margin-top: 80px;
+  margin-top: 50px;
+  @include breakPC() {
+    margin-top: 80px;
+  }
   .footerContact {
-    padding: 70px 0;
+    padding: 40px 0;
     box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, .16);
+    @include breakPC() {
+      padding: 70px 0;
+    }
     &__inner {
       @include contentWidth();
     }
     &__col {
-      display: flex;
-      justify-content: space-between;
+      @include breakPC() {
+        display: flex;
+        justify-content: space-between;
+      }
       .col-r {
-        margin-left: 30px;
+        @include resetMargin();
+        margin-top: 20px;
+        @include breakPC() {
+          margin-left: 30px;
+        }
       }
     }
     &__hdg {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
+      @include breakPC() {
+        font-size: 2.8rem;
+      }
     }
     &__btnLink {
       display: block;
       margin-bottom: 15px;
       a {
-        display: inline-block;
+        display: block;
         border: 1px solid #333;
-        font-size: 2rem;
+        font-size: 1.4rem;
         color: #333;
-        padding: 20px 30px 20px 90px;
+        padding: 10px 10px 10px 60px;
         position: relative;
+        transition: opacity $TRANSITION;
+        @include breakPC() {
+          display: inline-block;
+          font-size: 2rem;
+          padding: 20px 30px 20px 90px;
+        }
+        @include hover() {
+          opacity: .6;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -38,8 +62,13 @@
           height: 23px;
           top: 0;
           bottom: 0;
-          left: 35px;
+          left: 18px;
           margin: auto;
+          @include breakPC() {
+            width: 27px;
+            height: 23px;
+            left: 35px;
+          }
         }
       }
     }
@@ -49,19 +78,37 @@
     }
   }
   .footer__contents {
-    padding: 60px 0 30px;
+    padding: 40px 0 15px;
     background-color: $BG_COLOR;
     color: #fff;
+    @include breakPC() {
+      padding: 60px 0 30px;
+    }
     &__inner {
       @include contentWidth();
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      @include breakPC() {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
     }
   }
   .footer__info {
     .footer__logo {
-      margin-bottom: 70px;
+      margin-bottom: 40px;
+      @include breakPC() {
+        margin-bottom: 70px;
+      }
+      > a {
+        display: inline-block;
+        transition: opacity $TRANSITION;
+        @include breakSP() {
+          max-width: 140px;
+        }
+        @include hover() {
+          opacity: .6;
+        }
+      }
     }
     .footer__navList {
       display: flex;
@@ -81,6 +128,9 @@
     }
   }
   .footer__copyright {
+    @include breakSP() {
+      margin-top: 10px;
+    }
     > p {
       margin-bottom: 0;
     }

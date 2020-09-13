@@ -1,10 +1,12 @@
 @charset "utf-8";
 
-// .top-aboutUS,
 .top-case,
 .top-chosen,
 .top-qa {
-  margin-top: 80px;
+  margin-top: 50px;
+  @include breakPC() {
+    margin-top: 80px;
+  }
   &__inner {
     @include contentWidth();
   }
@@ -12,22 +14,32 @@
 // .top-hdg
 .top-hdgSubtxt {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 500;
+    @include breakPC() {
+      font-size: 2.8rem;
+    }
     &__sub {
       display: block;
-      margin-bottom: 20px;
-      font-size: 1.6rem;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
       line-height: 1;
       font-weight: 600;
       font-family: $FONT_FAMILY_DIDACT;
+      @include breakPC() {
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+      }
     }
 }
 // top-btnLink
 .top-btnLink {
   display: block;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
   text-align: center;
+  @include breakPC() {
+    margin: 60px auto 0;
+  }
   a {
     display: inline-block;
     padding: 12px 46px;
@@ -65,7 +77,10 @@
 }
 // top-txt
 .top-txt {
-  margin-top: 40px;
+  margin-top: 30px;
+  @include breakPC() {
+    margin-top: 40px;
+  }
   p {
     margin-bottom: 0;
   }
@@ -104,15 +119,21 @@
   &__intro {
     position: relative;
     margin: auto;
-    padding: 0 60px;
+    padding: 0 25px;
     max-width: 1460px;
+    @include breakPC() {
+      padding: 0 60px;
+    }
     &::before {
       content: "";
       width: 1px;
       height: 100%;
       background-color: $FONT_COLOR;
       position: absolute;
-      left: 30px;
+      left: 6px;
+      @include breakPC() {
+        left: 30px;
+      }
     }
     &::after {
       content: "";
@@ -121,8 +142,11 @@
       background-color: $FONT_COLOR;
       position: absolute;
       bottom: 5px;
-      left: 28px;
+      left: 4.5px;
       transform: rotate(-45deg);
+      @include breakPC() {
+        left: 28px;
+      }
     }
     &__inner {
       padding: 0 40px;
@@ -131,28 +155,38 @@
     }
   }
   &__secHdg {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: $FONT_FAMILY_DIDACT;
     position: absolute;
     top: 55px;
-    left: 0px;
+    left: -30px;
     transform: rotate(90deg);
+    @include breakPC() {
+      font-size: 1.1rem;
+      left: 0px;
+    }
   }
   &__service {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 80px;
-    &__item {
+    margin-top: 50px;
+    @include breakPC() {
+      margin-top: 80px;
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      flex: 1 1 100%;
+      justify-content: flex-start;
+    }
+    &__item {
       color: #fff;
-      padding: 80px 40px 40px;
+      padding: 40px 20px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       position: relative;
+      @include breakPC() {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1 1 100%;
+        padding: 80px 40px 40px;
+      }
       &::before {
         content: "";
         width: 100%;
@@ -181,9 +215,13 @@
       }
     }
     &__hdg {
-      font-size: 2.8rem;
+      font-size: 1.8rem;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      @include breakPC() {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+      }
     }
   }
 }
@@ -206,23 +244,41 @@
     z-index: -1;
   }
   .chosenCol {
-    display: flex;
-    margin-top: 60px;
-    margin-left: -75px;
+    margin-top: 30px;
+    @include breakPC() {
+      display: flex;
+      margin-top: 60px;
+      margin-left: -75px;
+    }
     &__item {
-      margin-left: 75px;
+      &:nth-of-type(n + 2) {
+        margin-top: 30px;
+        @include breakPC() {
+          margin-top: 0;
+        }
+      }
+      @include breakPC() {
+        margin-left: 75px;
+      }
     }
     .chosenBox {
       background-color: #fff;
-      padding: 240px 30px 40px;
+      padding: 120px 20px 30px;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,.16);
       position: relative;
+      @include breakPC() {
+        padding: 240px 30px 40px;
+      }
       &__hdg {
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         padding: 0 6px;
+        @include breakPC() {
+          font-size: 2rem;
+          margin-bottom: 40px;
+        }
       }
       &.choseIcon-plan,
       &.choseIcon-service,
@@ -239,26 +295,41 @@
       }
       &.choseIcon-plan {
         &::before {
-          width: 124px;
-          height: 80px;
+          width: 72px;
+          height: 50px;
+          top: 50px;
           background-image: inline('top_index_icon-01.svg');
-          top: 100px;
+          @include breakPC(){
+            width: 124px;
+            height: 80px;
+            top: 100px;
+          }
         }
       }
       &.choseIcon-service {
         &::before {
-          width: 83px;
-          height: 87px;
+          width: 58px;
+          height: 60px;
           background-image: inline('top_index_icon-02.svg');
-          top: 90px;
+          top: 40px;
+          @include breakPC(){
+            width: 83px;
+            height: 87px;
+            top: 90px;
+          }
         }
       }
       &.choseIcon-work {
         &::before {
-          width: 80px;
-          height: 98px;
+          width: 53px;
+          height: 65px;
           background-image: inline('top_index_icon-03.svg');
-          top: 93px;
+          top: 40px;
+          @include breakPC(){
+            width: 80px;
+            height: 98px;
+            top: 93px;
+          }
         }
       }
     }
@@ -271,16 +342,26 @@
 // ----------------------------
 .top-qa {
   .qaList {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    margin-left: -60px;
+    margin-top: 30px;
+    @include breakPC() {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 60px;
+      margin-left: -60px;
+    }
     &__item {
+      &:nth-of-type(n+2){
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px dotted #ccc;
+      }
+      @include breakPC() {
       width: calc(50% - 60px);
       margin-left: 60px;
-    }
-    :nth-of-type(n+3){
-        margin-top: 60px;
+        &:nth-of-type(n+3){
+            margin-top: 60px;
+        }
+      }
     }
   }
   .qaBox {
@@ -291,19 +372,28 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        font-size: 1.6rem;
+        width: 28px;
+        height: 28px;
+        font-size: 1.4rem;
         line-height: 1;
         font-weight: 600;
         font-family: $FONT_FAMILY_DIDACT;
         position: absolute;
         border-radius: 50%;
+        @include breakPC() {
+          width: 40px;
+          height: 40px;
+          font-size: 1.6rem;
+        }
       }
     }
     dt {
-      font-size: 1.6rem;
-      padding: 9px 0 9px 60px;
+      font-size: 1.4rem;
+      padding: 9px 0 9px 40px;
+      @include breakPC() {
+        font-size: 1.6rem;
+        padding: 9px 0 9px 60px;
+      }
       &::before {
         content: "Q";
         color: #fff;
@@ -315,8 +405,12 @@
       }
     }
     dd {
-      margin-top: 50px;
-      padding-left: 60px;
+      margin-top: 15px;
+      padding-left: 40px;
+      @include breakPC() {
+        margin-top: 50px;
+        padding-left: 60px;
+      }
       &::before {
         content: "A";
         background-color: #fff;
@@ -336,46 +430,70 @@
 // ----------------------------
 .top-case {
   position: relative;
-  margin-top: 80px;
   &::before {
     content: "";
     position: absolute;
     width: 50%;
     height: calc(65% + 80px);
-    bottom: -80px;
+    bottom: -40px;
     left: 0;
     background-size: 12px 12px;
     background-image: radial-gradient(#888FA7 5%,transparent 11%);
     background-color: transparent;
     opacity: .6;
     z-index: -1;
+    @include breakPC() {
+      bottom: -80px;
+    }
   }
   &__inner {
     @include contentWidth();
   }
   &__col {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 60px;
-    margin-left: -70px;
-    .col {
-      margin-left: 70px;
+    margin-top: 30px;
+    @include breakPC() {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 60px;
+      margin-left: -70px;
+    }
+    .col {
+      display: flex;
       flex-direction: column-reverse;
       justify-content: flex-end;
-      width: calc(50% - 70px);
-      &__contents {
+      &:nth-of-type(n+2) {
         margin-top: 30px;
+      }
+      @include breakPC() {
+        margin-left: 70px;
+        width: calc(50% - 70px);
+        &:nth-of-type(n+2) {
+          margin-top: 0;
+        }
+      }
+      &__contents {
+        margin-top: 20px;
+        @include breakPC() {
+          margin-top: 30px;
+        }
         .top-hdg {
-          font-size: 2.4rem;
+          font-size: 1.8rem;
+          @include breakPC() {
+            font-size: 2.4rem;
+          }
         }
         .top-txt {
-          margin-top: 30px;
+          margin-top: 10px;
+          @include breakPC() {
+            margin-top: 30px;
+          }
         }
         .top-btnLink {
           text-align: right;
-          margin-top: 30px;
+          margin-top: 10px;
+          @include breakPC() {
+            margin-top: 30px;
+          }
         }
       }
       &__image {
