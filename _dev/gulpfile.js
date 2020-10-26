@@ -8,6 +8,9 @@
 
     const browserSync = require('browser-sync').create();
     const connectSSI = require('connect-ssi');
+    const webpackStream = require('webpack-stream');
+    const webpack = require('webpack');
+    const webpackConfig = require('./webpack.config');
 
     // 各ファイルの格納先
     const path = {
@@ -18,10 +21,13 @@
         },
         html: '../**/*.html',
         img: {
-            src: './src/img/**/*.+(jpg|jpeg|png)',
-            dist: '../img/'
+            src: './src/image/**/*.+(jpg|jpeg|png)',
+            dist: '../image/'
         },
-        js: '../**/*.js'
+        js: {
+            src: './src/js/**/*.js',
+            dist: '../js/',
+        },
     };
 
     //SASSコンパイル
@@ -33,14 +39,7 @@
         }))
         .pipe($.sass({ outputStyle: 'expanded' }))
         .pipe($.postcss([
-            autoprefixer({
-                overrideBrowserslist: [
-                    ">0.25%",
-                    "not op_mini all",
-                    'ios >= 10',
-                    'android >= 7'
-                ]
-            }),
+            autoprefixer(),
             mqpacker()
         ]))
         .pipe($.lineEndingCorrector({
@@ -61,6 +60,16 @@
             encoding: 'utf8'
         }))
         .pipe(gulp.dest(path.sass.dist))
+    };
+
+    // webpack
+    const bundleJs = () => { // eslint-disable-line
+        return gulp.src(path.js.src, {since: gulp.lastRun(bundleJs)}).
+            pipe($.plumber({
+                errorHandler: $.notify.onError('Error: <%= error.message %>'),
+            })).
+            pipe(webpackStream(webpackConfig, webpack)).
+            pipe(gulp.dest(path.js.dist));
     };
 
     //ブラウザシンクを使用したローカルサーバー
@@ -91,13 +100,14 @@
     const task_watch = (done) => {
         gulp.watch(path.sass.src, gulp.series(sass, server_reload));
         gulp.watch(path.html, server_reload);
-        gulp.watch(path.js, server_reload);
+        gulp.watch(path.js.src, gulp.series(bundleJs, server_reload));
         done();
     }
 
     // エクスポート
     module.exports = {
         sass: sass,
+        js: bundleJs,
         watch: gulp.series(server, task_watch)
     };
 })();

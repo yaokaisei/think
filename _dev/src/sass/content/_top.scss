@@ -350,10 +350,12 @@
       margin-left: -60px;
     }
     &__item {
-      &:nth-of-type(n+2){
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px dotted #ccc;
+      @include breakSP() {
+        &:nth-of-type(n+2){
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px dotted #ccc;
+        }
       }
       @include breakPC() {
       width: calc(50% - 60px);

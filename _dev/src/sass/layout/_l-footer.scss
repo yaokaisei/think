@@ -144,6 +144,12 @@
   position: fixed;
   right: 30px;
   bottom: 30px;
+  @include breakSP() {
+    width: 45px;
+    height: 45px;
+    right: 15px;
+    bottom: 15px;
+  }
   a {
     display: block;
     width: 100%;
@@ -163,6 +169,11 @@
       width: 20px;
       height: 20px;
       margin: auto;
+      @include breakSP() {
+        width: 10px;
+        height: 10px;
+        top: 4px;
+      }
     }
     span {
       opacity: 0;
