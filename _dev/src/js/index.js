@@ -1,1 +1,3 @@
-console.log('テスト');
+import {hoge} from "./module/hamburgerMenu";
+
+hoge();

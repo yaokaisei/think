@@ -91,10 +91,23 @@
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('テスト');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_hamburgerMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/hamburgerMenu */ \"./src/js/module/hamburgerMenu.js\");\n\nObject(_module_hamburgerMenu__WEBPACK_IMPORTED_MODULE_0__[\"hoge\"])();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/module/hamburgerMenu.js":
+/*!****************************************!*\
+  !*** ./src/js/module/hamburgerMenu.js ***!
+  \****************************************/
+/*! exports provided: hoge */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"hoge\", function() { return hoge; });\nvar hoge = function hoge() {\n  // ハンバーガーメニューボタン生成\n  var btn = document.createElement('button');\n  var span = document.createElement('span');\n  span.textContent = 'menu';\n  btn.classList.add('js-menuBtn');\n  btn.setAttribute('aria-expanded', false);\n  btn.setAttribute('aria-controls', 'panel');\n  btn.appendChild(span);\n  var panel = document.querySelector('.headerNav');\n  panel.parentNode.insertBefore(btn, panel);\n\n  var clickHandler = function clickHandler() {\n    if (btn.getAttribute('aria-expanded', false)) {\n      btn.setAttribute('aria-expanded', true);\n    } else {\n      btn.setAttribute('aria-expanded', false);\n    }\n\n    document.body.classList.toggle('is-open');\n  };\n\n  btn.addEventListener('click', clickHandler);\n};\n\n\n\n//# sourceURL=webpack:///./src/js/module/hamburgerMenu.js?");
 
 /***/ })
 

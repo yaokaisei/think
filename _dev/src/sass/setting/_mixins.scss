@@ -74,15 +74,14 @@
     transform: rotate($transform + deg);
 }
 
+
 // ドット背景
 @mixin backDot {
     background-size: 13px 13px;
-    background-image: radial-gradient(#7E98B1 5%,transparent 11%);
+    background-image: radial-gradient(#888FA7 5%,transparent 11%);
     background-color: transparent;
-
-    @include breakSP() {
-        opacity: .5;
-    }
+    opacity: .6;
+    z-index: -1;
 }
 
 // =============================================

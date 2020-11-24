@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.main {
+    // パンくずリスト
+    .breadcrumb {
+      @include contentWidth();
+      padding: 17px 0px;
+        &__list {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                @include breakSP {
+                    font-size: 1rem;
+                }
+                a {
+                    text-decoration: none;
+                }
+                + li {
+                    position: relative;
+                    margin-left: 30px;
+                    &::before {
+                        @include iconArrow(45, $FONT_COLOR);
+                        width: 6px;
+                        height: 6px;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: -19px;
+                        margin: auto;
+                    }
+                }
+                [aria-current="page"] {
+                    color: $FONT_COLOR;
+                    @include hover {
+                        opacity: 1  ;
+                    }
+                }
+            }
+        }
+    }
+
+    // コンテンツラッパー
+    &-wrapper {
+      &__inner {
+        @include contentWidth();
+        @include resetMargin();
+      }
+    }
+}

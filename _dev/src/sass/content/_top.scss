@@ -1,4 +1,104 @@
 @charset "utf-8";
+.header {
+  height: 100%;
+  margin: 0 0 40px;
+  padding: 55px 0;
+  @include breakPC() {
+    margin: 60px 0;
+  }
+  &__inner {
+    padding: 0;
+  }
+  &TopMv {
+    height: 470px;
+    position: relative;
+    @include breakPC() {
+      height: 600px;
+    }
+    &__inner {
+      display: flex;
+      align-items: center;
+      max-width: 1460px;
+      height: 100%;
+      margin: auto;
+    }
+    // ヘッダー背景画像共通スタイル
+    @mixin topHeaderBg() {
+      content: "";
+      width: 90%;
+      max-width: 1270px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include breakPC() {
+        width: 70%;
+        height: 600px;
+      }
+    }
+    &::before {
+      @include topHeaderBg();
+      background-image: url(../images/top_index_bg.jpg);
+      background-repeat: no-repeat;
+      background-position-x: 40%;
+      background-size: cover;
+      @include breakPC() {
+        width: 70%;
+        height: 600px;
+      }
+    }
+    &::after {
+      @include topHeaderBg();
+      background: linear-gradient(-45deg, #5865b9, #22dcfd, #1c91e2, #5865b9);
+      background-size: 300% 300%;
+      animation: Gradient 7s ease-in-out infinite;
+      opacity: .25;
+      @keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
+      }
+    }
+  }
+  &TopLogo {
+    @include breakPC() {
+      width: 30%;
+      max-width: 392px;
+      padding: 0 30px;
+    }
+    @include breakSP() {
+      max-width: 160px;
+      background-color: #fff;
+      padding: 30px 20px;
+      z-index: 1;
+    }
+    > a {
+      display: inline-block;
+      transition: opacity $TRANSITION;
+      @include hover() {
+        opacity: .6;
+      }
+    }
+    > span {
+      display: block;
+      font-size: 1.4rem;
+      margin-top: 20px;
+      @include breakPC() {
+      margin-top: 180px;
+      font-size: 1.6rem;
+      font-weight: 200;
+      line-height: 2.4;
+      }
+    }
+  }
+}
+
 
 .top-case,
 .top-chosen,
@@ -202,13 +302,13 @@
         z-index: 0;
       }
       &.of-bgRecruit {
-        background-image: url('/images/top_index_01.jpg');
+        background-image: url('../images/top_index_01.jpg');
       }
       &.of-bgCorporate {
-        background-image: url('/images/top_index_02.jpg');
+        background-image: url('../images/top_index_02.jpg');
       }
       &.of-bgProduct {
-        background-image: url('/images/top_index_03.jpg');
+        background-image: url('../images/top_index_03.jpg');
       }
       > * {
         position: relative;
@@ -231,17 +331,13 @@
 .top-chosen {
   position: relative;
   &::before {
+    @include backDot();
     content: "";
     position: absolute;
     width: 100%;
     height: calc(40% + 60px);
     bottom: -60px;
     left: 0;
-    background-size: 12px 12px;
-    background-image: radial-gradient(#888FA7 5%,transparent 11%);
-    background-color: transparent;
-    opacity: .6;
-    z-index: -1;
   }
   .chosenCol {
     margin-top: 30px;
