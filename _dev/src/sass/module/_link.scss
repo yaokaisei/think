@@ -1,1 +1,44 @@
 @charset "utf-8";
+
+.mod-btnLink {
+  display: block;
+  margin: 60px auto 0;
+  @include breakSP() {
+    margin: 30px auto 0;
+    text-align: center;
+  }
+  a {
+    display: inline-block;
+    padding: 12px 46px;
+    line-height: 1;
+    background: #fff;
+    color: $FONT_COLOR;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    border: 1px solid FONT_COLOR;
+    border-radius: 30px;
+    position: relative;
+    transition: background-color $TRANSITION,
+                box-shadow $TRANSITION,
+                color $TRANSITION;
+    &::before {
+      @include iconArrow(45, $FONT_COLOR);
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 15px;
+      width: 6px;
+      height: 6px;
+      margin: auto;
+      transition: border-color $TRANSITION;
+    }
+    @include hover {
+      color: #fff;
+      background-color: $FONT_COLOR;
+      box-shadow: none;
+      &::before {
+        border-color: #fff;
+      }
+    }
+  }
+}

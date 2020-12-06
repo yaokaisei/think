@@ -3,8 +3,8 @@
 .main {
     // パンくずリスト
     .breadcrumb {
-      @include contentWidth();
-      padding: 17px 0px;
+        @include contentWidth();
+        padding: 17px 0px;
         &__list {
             margin: 0;
             display: flex;
