@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.mod-btnLink {
+.m-btnLink {
   display: block;
   margin: 60px auto 0;
   @include breakSP() {
@@ -41,4 +41,64 @@
       }
     }
   }
+}
+
+.m-linkPanel {
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    margin: 30px auto;
+
+    a {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 0 0 50px;
+      text-decoration: none;
+      color: $FONT-COLOR;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 10px 15px rgba(0,0,0,.15);
+      transition: box-shadow .3s,opacity .3s;
+
+      @include breakPC() {
+        padding: 0 0 70px;
+      }
+
+      &::before {
+        @include iconArrow(45, $BG_COLOR);
+        content: "";
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+
+        @include breakPC() {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      @include hover() {
+        opacity: .6;
+        box-shadow: 0 0 5px rgba(0,0,0,.15);
+      }
+
+    }
+
+    &__contents {
+      @include resetMargin();
+      margin-top: 30px;
+      padding: 0 30px;
+
+      > * {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__img {
+      line-height: 0;
+    }
 }

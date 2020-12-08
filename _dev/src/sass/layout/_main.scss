@@ -42,10 +42,10 @@
     }
 
     // コンテンツラッパー
-    &-wrapper {
-      &__inner {
-        @include contentWidth();
-        @include resetMargin();
-      }
+    &-contents {
+        &__inner {
+            @include contentWidth();
+            @include resetMargin();
+        }
     }
 }

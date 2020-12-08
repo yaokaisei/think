@@ -1,10 +1,6 @@
 @charset "utf-8";
 
 .l-footer {
-  margin-top: 50px;
-  @include breakPC() {
-    margin-top: 80px;
-  }
   .footerContact {
     padding: 40px 0;
     box-shadow: 0px -6px 30px 0px rgba(0, 0, 0, .16);

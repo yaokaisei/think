@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.mod-hdgSubtxt {
+.m-hdgSubtxt {
   margin: 40px 0 30px;
   font-size: 4rem;
   line-height: 1.4;
@@ -35,7 +35,7 @@
   }
 }
 
-.mod-hdgUnderline {
+.m-hdgUnderline {
   font-size: 2.2rem;
   margin: 40px 0 30px;
   padding-bottom: 10px;
@@ -45,5 +45,25 @@
     font-size: 3rem;
     margin: 60px 0 40px;
     padding-bottom: 18px;
+  }
+}
+
+.m-hdgVerticallin {
+  position: relative;
+  font-size: 1.8rem;
+  padding-left: 14px;
+  margin: 30px 0;
+
+  @include breakPC() {
+    font-size: 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: $BG_COLOR;
   }
 }
