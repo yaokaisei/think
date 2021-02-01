@@ -4,21 +4,34 @@
     // パンくずリスト
     .breadcrumb {
         @include contentWidth();
-        padding: 17px 0px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+
+        @include breakSP {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
         &__list {
             margin: 0;
             display: flex;
             flex-wrap: wrap;
+
             li {
+                font-size: 1.2rem;
+
                 @include breakSP {
                     font-size: 1rem;
                 }
+
                 a {
                     text-decoration: none;
                 }
+
                 + li {
                     position: relative;
                     margin-left: 30px;
+
                     &::before {
                         @include iconArrow(45, $FONT_COLOR);
                         width: 6px;
@@ -31,8 +44,10 @@
                         margin: auto;
                     }
                 }
+
                 [aria-current="page"] {
                     color: $FONT_COLOR;
+
                     @include hover {
                         opacity: 1  ;
                     }
@@ -43,6 +58,7 @@
 
     // コンテンツラッパー
     &-contents {
+        overflow: hidden;
         &__inner {
             @include contentWidth();
             @include resetMargin();

@@ -1,15 +1,20 @@
 @charset "utf-8";
 
-.m-btnLink {
+/* ------------------------------------
+ * .m-linkBtn
+ * --------------------------------- */
+.m-linkBtn {
   display: block;
   margin: 60px auto 0;
+
   @include breakSP() {
     margin: 30px auto 0;
     text-align: center;
   }
+
   a {
     display: inline-block;
-    padding: 12px 46px;
+    padding: 18px 48px;
     line-height: 1;
     background: #fff;
     color: $FONT_COLOR;
@@ -20,6 +25,7 @@
     transition: background-color $TRANSITION,
                 box-shadow $TRANSITION,
                 color $TRANSITION;
+
     &::before {
       @include iconArrow(45, $FONT_COLOR);
       content: "";
@@ -32,10 +38,12 @@
       margin: auto;
       transition: border-color $TRANSITION;
     }
+
     @include hover {
       color: #fff;
       background-color: $FONT_COLOR;
       box-shadow: none;
+
       &::before {
         border-color: #fff;
       }
@@ -43,6 +51,9 @@
   }
 }
 
+/* ------------------------------------
+ * .m-linkPanel
+ * --------------------------------- */
 .m-linkPanel {
     width: 100%;
     max-width: 550px;
@@ -60,7 +71,7 @@
       background: #fff;
       position: relative;
       box-shadow: 0 10px 15px rgba(0,0,0,.15);
-      transition: box-shadow .3s,opacity .3s;
+      transition: box-shadow .3s;
 
       @include breakPC() {
         padding: 0 0 70px;
@@ -82,10 +93,14 @@
       }
 
       @include hover() {
-        opacity: .6;
         box-shadow: 0 0 5px rgba(0,0,0,.15);
-      }
 
+        .m-linkPanel__img {
+          img {
+            transform: scale(1.07);
+          }
+        }
+      }
     }
 
     &__contents {
@@ -100,5 +115,10 @@
 
     &__img {
       line-height: 0;
+      overflow: hidden;
+
+      img {
+        transition: transform .3s;
+      }
     }
 }

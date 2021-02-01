@@ -1,5 +1,85 @@
 @charset "utf-8";
 
+/* ------------------------------------
+ * .m-listBullet
+ * --------------------------------- */
+.m-listBullet {
+    margin: 20px 0 ;
+
+    @include breakPC() {
+        margin: 30px 0;
+    }
+
+    > li {
+        position: relative;
+        padding-left: 14px;
+        font-size: 1.4rem;
+        line-height: 1.7;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        // ビュレット
+        &::before {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            content: "";
+            background-color: $BG_COLOR;
+            border-radius: 50%;
+        }
+
+        > ul,
+        > ol {
+            margin: 8px 0 0;
+        }
+    }
+}
+
+/* ------------------------------------
+ * .m-listOrder
+ * --------------------------------- */
+.m-listOrder {
+    margin: 20px 0;
+
+    @include breakPC() {
+        margin: 30px 0;
+    }
+
+    > li {
+        position: relative;
+        padding-left: 21px;
+        font-size: 1.4rem;
+        line-height: 1.7;
+        counter-increment: index;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            content: counter(index) ".";
+        }
+
+        > ol,
+        > ul {
+            margin: 8px 0 0;
+            counter-reset: index;
+        }
+    }
+}
+
+/* ------------------------------------
+ * .m-listExplain
+ * --------------------------------- */
 .m-listExplain {
   @include resetMargin();
   margin: 20px 0;
@@ -23,4 +103,49 @@
     margin-top: 5px;
     padding-left: 10px;
   }
+}
+
+/* ------------------------------------
+ * .m-listNotice
+ * --------------------------------- */
+.m-listNotice {
+    margin: 20px 0;
+
+    @include breakPC() {
+        margin: 30px 0;
+    }
+
+    > li {
+        position: relative;
+        padding-left: 16px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        > small {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    // 数字リストの場合
+    @at-root {
+        ol {
+            &.m-listNotice {
+                > li {
+                    padding-left: 28px;
+                }
+            }
+        }
+    }
 }

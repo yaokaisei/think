@@ -18,14 +18,18 @@ body {
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing : 0.05em ;
-    line-height: 1.8;
+    line-height: 1.6;
     word-wrap: break-word;
     position: relative;
+
     @include breakPC() {
         font-size: 1.4rem;
     }
 }
 
+/* ------------------------------------
+ * block
+ * --------------------------------- */
 h1,
 h2,
 h3,
@@ -43,6 +47,9 @@ p {
     }
 }
 
+/* ------------------------------------
+ * List
+ * --------------------------------- */
 ul,
 ol,
 dl {
@@ -59,6 +66,42 @@ dd {
     margin: 0;
 }
 
+/* ------------------------------------
+ * inline
+ * --------------------------------- */
+b,
+dfn,
+em,
+q,
+small,
+strong,
+sub,
+sup {
+    font-style: normal;
+}
+
+b,
+em,
+strong {
+    font-weight: bold;
+}
+
+strong:not([class]) {
+    color: $ATTENTION_COLOR;
+}
+
+sub,
+sup {
+    font-size: 1.2rem;
+}
+
+time {
+    font-weight: 700;
+}
+
+/* ------------------------------------
+ * a
+ * --------------------------------- */
 a {
     color: $LINK_COLOR;
     text-decoration: none;
@@ -79,10 +122,17 @@ select {
     }
 }
 
+/* ------------------------------------
+ * img
+ * --------------------------------- */
+
 img {
     max-width: 100%;
 }
 
+/* ------------------------------------
+ * table
+ * --------------------------------- */
 table {
     margin: 0;
     width: 100%;
@@ -104,6 +154,9 @@ td {
     vertical-align: middle;
 }
 
+/* ------------------------------------
+ * form
+ * --------------------------------- */
 textarea {
     resize: vertical;
 }

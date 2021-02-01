@@ -358,13 +358,16 @@ body {
   min-height: 100vh;
   font-weight: 300;
   font-size: 1.2rem;
-  line-height: 1.8;
+  line-height: 1.6;
   font-family: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   color: #333333;
   letter-spacing: 0.05em;
   word-wrap: break-word;
 }
 
+/* ------------------------------------
+ * block
+ * --------------------------------- */
 h1,
 h2,
 h3,
@@ -379,6 +382,9 @@ p {
   margin: 0 0 15px;
 }
 
+/* ------------------------------------
+ * List
+ * --------------------------------- */
 ul,
 ol,
 dl {
@@ -395,6 +401,42 @@ dd {
   margin: 0;
 }
 
+/* ------------------------------------
+ * inline
+ * --------------------------------- */
+b,
+dfn,
+em,
+q,
+small,
+strong,
+sub,
+sup {
+  font-style: normal;
+}
+
+b,
+em,
+strong {
+  font-weight: bold;
+}
+
+strong:not([class]) {
+  color: #c90101;
+}
+
+sub,
+sup {
+  font-size: 1.2rem;
+}
+
+time {
+  font-weight: 700;
+}
+
+/* ------------------------------------
+ * a
+ * --------------------------------- */
 a {
   color: #3498db;
   text-decoration: none;
@@ -408,10 +450,16 @@ select:focus {
   outline: #69c9f3 solid 2px;
 }
 
+/* ------------------------------------
+ * img
+ * --------------------------------- */
 img {
   max-width: 100%;
 }
 
+/* ------------------------------------
+ * table
+ * --------------------------------- */
 table {
   width: 100%;
   margin: 0;
@@ -426,6 +474,9 @@ td {
   text-align: left;
 }
 
+/* ------------------------------------
+ * form
+ * --------------------------------- */
 textarea {
   resize: vertical;
 }
@@ -546,7 +597,7 @@ select::-ms-expand {
 .l-footer .footerContact__btnLink a {
   position: relative;
   display: block;
-  padding: 10px 10px 10px 60px;
+  padding: 18px 10px 18px 60px;
   font-size: 1.4rem;
   color: #333333;
   border: 1px solid #333333;
@@ -661,8 +712,9 @@ select::-ms-expand {
   max-width: calc(1180px + 30px);
   margin-right: auto;
   margin-left: auto;
-  padding: 17px 0;
+  padding-top: 17px;
   padding-right: 15px;
+  padding-bottom: 17px;
   padding-left: 15px;
 }
 
@@ -670,6 +722,10 @@ select::-ms-expand {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+}
+
+.main .breadcrumb__list li {
+  font-size: 1.2rem;
 }
 
 .main .breadcrumb__list li a {
@@ -697,6 +753,10 @@ select::-ms-expand {
 
 .main .breadcrumb__list li [aria-current="page"] {
   color: #333333;
+}
+
+.main-contents {
+  overflow: hidden;
 }
 
 .main-contents__inner {
@@ -831,7 +891,7 @@ select::-ms-expand {
 .top-btnLink a {
   position: relative;
   display: inline-block;
-  padding: 12px 46px;
+  padding: 18px 58px;
   line-height: 1;
   color: #333333;
   background: #ffffff;
@@ -1601,6 +1661,10 @@ select::-ms-expand {
     top: 4px;
     width: 10px;
     height: 10px;
+  }
+  .main .breadcrumb {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   .main .breadcrumb__list li {
     font-size: 1rem;

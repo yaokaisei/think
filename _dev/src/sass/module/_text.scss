@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* ------------------------------------
+ * .text-*
+ * --------------------------------- */
+.text-strong {
+    font-weight: 700;
+    color: $ATTENTION_COLOR;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.txt-small {
+    font-size: 1.4rem;
+}
+
+/* ------------------------------------
+ * .m-textAnnotation
+ * --------------------------------- */
+.m-textAnnotation {
+    display: table;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-collapse: collapse;
+
+    @include breakPC() {
+        font-size: 1.4rem;
+    }
+
+    &__mark {
+        display: table-cell;
+        padding-right: 5px;
+    }
+
+    small {
+        display: table-cell;
+        font-size: 1.2rem;
+
+        @include breakPC() {
+            font-size: 1.4rem;
+        }
+    }
+
+    // Modifier
+    &--right {
+        margin-left: auto;
+    }
+
+    // Modifier
+    &--center {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

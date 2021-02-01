@@ -35,6 +35,7 @@
   display: flex;
   margin: 50px 0;
   position: relative;
+
   @include breakPC() {
     flex-direction: unset;
     justify-content: space-between;
@@ -49,14 +50,11 @@
 
   &__image {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 0;
+    line-height: 0;
 
     img {
       width: 100%;
-    }
-
-    @include breakPC() {
-      margin-top: 0;
     }
   }
 }
@@ -77,16 +75,17 @@
   &__contents {
     width: 100%;
     padding: 20px;
-    margin: 0 0 -25px calc(-50vw + 50%);
+    margin: 0 0 -60px calc(-50vw + 50%);
     z-index: 2;
+
     @include breakSP() {
       background-color: #fff;
       box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
     }
 
     @include breakPC() {
-      width: 50%;
-      margin: 0 30px 0;
+      width: calc(50% - 30px);
+      margin: 0 30px 0 0;
       padding: 0;
     }
   }
@@ -94,10 +93,11 @@
   &__image {
     width: 100vw;
     margin: 0 calc(-50vw + 50%);
+    line-height: 0;
 
     @include breakPC() {
       width: 100%;
-      margin: 0 calc(-50vw + 50%) 0;
+      margin: 0 calc(-50vw + 50%) 0 0;
     }
   }
 }
@@ -107,6 +107,7 @@
 
   &__contents {
     width: 70%;
+
     @include breakSP() {
       width: 100%;
       margin-top: 40px;
@@ -132,6 +133,7 @@
       }
       .c-layout-img__image {
         margin-left: calc(-50vw + 50%);
+        margin-top: 0;
       }
     }
   }

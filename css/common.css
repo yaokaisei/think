@@ -358,13 +358,16 @@ body {
   min-height: 100vh;
   font-weight: 300;
   font-size: 1.2rem;
-  line-height: 1.8;
+  line-height: 1.6;
   font-family: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   color: #333333;
   letter-spacing: 0.05em;
   word-wrap: break-word;
 }
 
+/* ------------------------------------
+ * block
+ * --------------------------------- */
 h1,
 h2,
 h3,
@@ -379,6 +382,9 @@ p {
   margin: 0 0 15px;
 }
 
+/* ------------------------------------
+ * List
+ * --------------------------------- */
 ul,
 ol,
 dl {
@@ -395,6 +401,42 @@ dd {
   margin: 0;
 }
 
+/* ------------------------------------
+ * inline
+ * --------------------------------- */
+b,
+dfn,
+em,
+q,
+small,
+strong,
+sub,
+sup {
+  font-style: normal;
+}
+
+b,
+em,
+strong {
+  font-weight: bold;
+}
+
+strong:not([class]) {
+  color: #c90101;
+}
+
+sub,
+sup {
+  font-size: 1.2rem;
+}
+
+time {
+  font-weight: 700;
+}
+
+/* ------------------------------------
+ * a
+ * --------------------------------- */
 a {
   color: #3498db;
   text-decoration: none;
@@ -408,10 +450,16 @@ select:focus {
   outline: #69c9f3 solid 2px;
 }
 
+/* ------------------------------------
+ * img
+ * --------------------------------- */
 img {
   max-width: 100%;
 }
 
+/* ------------------------------------
+ * table
+ * --------------------------------- */
 table {
   width: 100%;
   margin: 0;
@@ -426,6 +474,9 @@ td {
   text-align: left;
 }
 
+/* ------------------------------------
+ * form
+ * --------------------------------- */
 textarea {
   resize: vertical;
 }
@@ -546,7 +597,7 @@ select::-ms-expand {
 .l-footer .footerContact__btnLink a {
   position: relative;
   display: block;
-  padding: 10px 10px 10px 60px;
+  padding: 18px 10px 18px 60px;
   font-size: 1.4rem;
   color: #333333;
   border: 1px solid #333333;
@@ -661,8 +712,9 @@ select::-ms-expand {
   max-width: calc(1180px + 30px);
   margin-right: auto;
   margin-left: auto;
-  padding: 17px 0;
+  padding-top: 17px;
   padding-right: 15px;
+  padding-bottom: 17px;
   padding-left: 15px;
 }
 
@@ -670,6 +722,10 @@ select::-ms-expand {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+}
+
+.main .breadcrumb__list li {
+  font-size: 1.2rem;
 }
 
 .main .breadcrumb__list li a {
@@ -697,6 +753,10 @@ select::-ms-expand {
 
 .main .breadcrumb__list li [aria-current="page"] {
   color: #333333;
+}
+
+.main-contents {
+  overflow: hidden;
 }
 
 .main-contents__inner {
@@ -772,7 +832,8 @@ select::-ms-expand {
 .c-layout-mv__image,
 .c-layout-img__image {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 0;
+  line-height: 0;
 }
 
 .c-layout-mv__image img,
@@ -801,13 +862,14 @@ select::-ms-expand {
 .c-layout-mv__contents {
   z-index: 2;
   width: 100%;
-  margin: 0 0 -25px calc(-50vw + 50%);
+  margin: 0 0 -60px calc(-50vw + 50%);
   padding: 20px;
 }
 
 .c-layout-mv__image {
   width: 100vw;
   margin: 0 calc(-50vw + 50%);
+  line-height: 0;
 }
 
 .c-layout-img {
@@ -852,7 +914,7 @@ select::-ms-expand {
 
 .m-hdgVerticallin {
   position: relative;
-  margin: 30px 0;
+  margin: 30px 0 20px;
   padding-left: 14px;
   font-size: 1.8rem;
 }
@@ -866,15 +928,64 @@ select::-ms-expand {
   background-color: #333333;
 }
 
-.m-btnLink {
+/* ------------------------------------
+ * .text-*
+ * --------------------------------- */
+.text-strong {
+  font-weight: 700;
+  color: #c90101;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.txt-small {
+  font-size: 1.4rem;
+}
+
+/* ------------------------------------
+ * .m-textAnnotation
+ * --------------------------------- */
+.m-textAnnotation {
+  display: table;
+  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.m-textAnnotation__mark {
+  display: table-cell;
+  padding-right: 5px;
+}
+
+.m-textAnnotation small {
+  display: table-cell;
+  font-size: 1.2rem;
+}
+
+.m-textAnnotation--right {
+  margin-left: auto;
+}
+
+.m-textAnnotation--center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ------------------------------------
+ * .m-linkBtn
+ * --------------------------------- */
+.m-linkBtn {
   display: block;
   margin: 60px auto 0;
 }
 
-.m-btnLink a {
+.m-linkBtn a {
   position: relative;
   display: inline-block;
-  padding: 12px 46px;
+  padding: 18px 48px;
   line-height: 1;
   color: #333333;
   background: #ffffff;
@@ -884,7 +995,7 @@ select::-ms-expand {
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
-.m-btnLink a::before {
+.m-linkBtn a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -899,6 +1010,9 @@ select::-ms-expand {
   transition: border-color 0.3s;
 }
 
+/* ------------------------------------
+ * .m-linkPanel
+ * --------------------------------- */
 .m-linkPanel {
   width: 100%;
   max-width: 550px;
@@ -917,7 +1031,7 @@ select::-ms-expand {
   text-decoration: none;
   background: #ffffff;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s,opacity 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 .m-linkPanel a::before {
@@ -950,9 +1064,85 @@ select::-ms-expand {
 }
 
 .m-linkPanel__img {
+  overflow: hidden;
   line-height: 0;
 }
 
+.m-linkPanel__img img {
+  transition: transform 0.3s;
+}
+
+/* ------------------------------------
+ * .m-listBullet
+ * --------------------------------- */
+.m-listBullet {
+  margin: 20px 0;
+}
+
+.m-listBullet > li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.m-listBullet > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.m-listBullet > li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #333333;
+  border-radius: 50%;
+}
+
+.m-listBullet > li > ul,
+.m-listBullet > li > ol {
+  margin: 8px 0 0;
+}
+
+/* ------------------------------------
+ * .m-listOrder
+ * --------------------------------- */
+.m-listOrder {
+  margin: 20px 0;
+}
+
+.m-listOrder > li {
+  position: relative;
+  padding-left: 21px;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  counter-increment: index;
+}
+
+.m-listOrder > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.m-listOrder > li::before {
+  content: counter(index) ".";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.m-listOrder > li > ol,
+.m-listOrder > li > ul {
+  margin: 8px 0 0;
+  counter-reset: index;
+}
+
+/* ------------------------------------
+ * .m-listExplain
+ * --------------------------------- */
 .m-listExplain {
   margin: 20px 0;
 }
@@ -982,6 +1172,40 @@ select::-ms-expand {
 
 .m-listExplain dd > *:last-child {
   margin-bottom: 0 !important;
+}
+
+/* ------------------------------------
+ * .m-listNotice
+ * --------------------------------- */
+.m-listNotice {
+  margin: 20px 0;
+}
+
+.m-listNotice > li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.m-listNotice > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.m-listNotice > li > small {
+  font-size: 1.4rem;
+}
+
+.m-listNotice__mark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+ol.m-listNotice > li {
+  padding-left: 28px;
 }
 
 @media screen and (min-width: 835px) {
@@ -1110,18 +1334,14 @@ select::-ms-expand {
     align-items: center;
     margin: 80px 0;
   }
-  .c-layout-mv__image,
-  .c-layout-img__image {
-    margin-top: 0;
-  }
   .c-layout-mv__contents {
-    width: 50%;
-    margin: 0 30px 0;
+    width: calc(50% - 30px);
+    margin: 0 30px 0 0;
     padding: 0;
   }
   .c-layout-mv__image {
     width: 100%;
-    margin: 0 calc(-50vw + 50%) 0;
+    margin: 0 calc(-50vw + 50%) 0 0;
   }
   .c-layout-img--right .c-layout-img__contents {
     margin-right: 65px;
@@ -1136,6 +1356,7 @@ select::-ms-expand {
     margin-left: 65px;
   }
   .c-layout-img--left .c-layout-img__image {
+    margin-top: 0;
     margin-left: calc(-50vw + 50%);
   }
   .m-hdgSubtxt {
@@ -1150,14 +1371,20 @@ select::-ms-expand {
   .m-hdgVerticallin {
     font-size: 2rem;
   }
-  .m-btnLink a:hover,
-  .m-btnLink a:focus {
+  .m-textAnnotation {
+    font-size: 1.4rem;
+  }
+  .m-textAnnotation small {
+    font-size: 1.4rem;
+  }
+  .m-linkBtn a:hover,
+  .m-linkBtn a:focus {
     color: #ffffff;
     background-color: #333333;
     box-shadow: none;
   }
-  .m-btnLink a:hover::before,
-  .m-btnLink a:focus::before {
+  .m-linkBtn a:hover::before,
+  .m-linkBtn a:focus::before {
     border-color: #ffffff;
   }
   .m-linkPanel a {
@@ -1170,9 +1397,21 @@ select::-ms-expand {
   .m-linkPanel a:hover,
   .m-linkPanel a:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    opacity: 0.6;
+  }
+  .m-linkPanel a:hover .m-linkPanel__img img,
+  .m-linkPanel a:focus .m-linkPanel__img img {
+    transform: scale(1.07);
+  }
+  .m-listBullet {
+    margin: 30px 0;
+  }
+  .m-listOrder {
+    margin: 30px 0;
   }
   .m-listExplain {
+    margin: 30px 0;
+  }
+  .m-listNotice {
     margin: 30px 0;
   }
 }
@@ -1295,6 +1534,10 @@ select::-ms-expand {
     width: 10px;
     height: 10px;
   }
+  .main .breadcrumb {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
   .main .breadcrumb__list li {
     font-size: 1rem;
   }
@@ -1312,7 +1555,7 @@ select::-ms-expand {
   .m-hdgSubtxt > span::before {
     width: 30px;
   }
-  .m-btnLink {
+  .m-linkBtn {
     margin: 30px auto 0;
     text-align: center;
   }
