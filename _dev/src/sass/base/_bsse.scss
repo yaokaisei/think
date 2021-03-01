@@ -110,6 +110,10 @@ a {
             opacity: .6;
         }
     }
+    &:not([href]) {
+        color: $FONT_COLOR;
+        text-decoration: none;
+    }
 }
 
 a,

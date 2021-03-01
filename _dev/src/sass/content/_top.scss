@@ -1,8 +1,8 @@
 @charset "utf-8";
 .header {
   height: 100%;
-  margin: 0 0 40px;
   padding: 55px 0;
+  margin: 0 0 40px;
   @include breakPC() {
     margin: 60px 0;
   }
@@ -10,8 +10,8 @@
     padding: 0;
   }
   &TopMv {
-    height: 470px;
     position: relative;
+    height: 470px;
     @include breakPC() {
       height: 600px;
     }
@@ -24,13 +24,13 @@
     }
     // ヘッダー背景画像共通スタイル
     @mixin topHeaderBg() {
-      content: "";
-      width: 90%;
-      max-width: 1270px;
-      height: 100%;
       position: absolute;
       top: 0;
       right: 0;
+      width: 90%;
+      max-width: 1270px;
+      height: 100%;
+      content: "";
       @include breakPC() {
         width: 70%;
         height: 600px;
@@ -51,8 +51,8 @@
       @include topHeaderBg();
       background: linear-gradient(-45deg, #5865b9, #22dcfd, #1c91e2, #5865b9);
       background-size: 300% 300%;
-      animation: Gradient 7s ease-in-out infinite;
       opacity: .25;
+      animation: Gradient 7s ease-in-out infinite;
       @keyframes Gradient {
         0% {
           background-position: 0% 50%
@@ -73,10 +73,10 @@
       padding: 0 30px;
     }
     @include breakSP() {
-      max-width: 160px;
-      background-color: #fff;
-      padding: 30px 20px;
       z-index: 1;
+      max-width: 160px;
+      padding: 30px 20px;
+      background-color: #fff;
     }
     > a {
       display: inline-block;
@@ -87,8 +87,8 @@
     }
     > span {
       display: block;
-      font-size: 1.4rem;
       margin-top: 20px;
+      font-size: 1.4rem;
       @include breakPC() {
       margin-top: 180px;
       font-size: 1.6rem;
@@ -113,19 +113,19 @@
 }
 // .top-hdg
 .top-hdgSubtxt {
-    text-align: center;
     font-size: 2.2rem;
     font-weight: 500;
+    text-align: center;
     @include breakPC() {
       font-size: 2.8rem;
     }
     &__sub {
       display: block;
       margin-bottom: 10px;
-      font-size: 1.2rem;
-      line-height: 1;
-      font-weight: 600;
       font-family: $FONT_FAMILY_DIDACT;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1;
       @include breakPC() {
         margin-bottom: 20px;
         font-size: 1.6rem;
@@ -141,28 +141,28 @@
     margin: 60px auto 0;
   }
   a {
+    position: relative;
     display: inline-block;
     padding: 18px 58px;
     line-height: 1;
-    background: #fff;
     color: $FONT_COLOR;
-    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    background: #fff;
     border: 1px solid FONT_COLOR;
     border-radius: 30px;
-    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
     transition: background-color $TRANSITION,
                 box-shadow $TRANSITION,
                 color $TRANSITION;
     &::before {
       @include iconArrow(45, $FONT_COLOR);
-      content: "";
       position: absolute;
       top: 0;
-      bottom: 0;
       right: 15px;
+      bottom: 0;
       width: 6px;
       height: 6px;
       margin: auto;
+      content: "";
       transition: border-color $TRANSITION;
     }
     @include hover {
@@ -203,124 +203,124 @@
   &__inner {
     position: relative;
     &::before {
-      content: "";
       position: absolute;
-      width: 40%;
-      height: 100%;
       bottom: 80px;
       left: -20px;
-      background-size: 12px 12px;
-      background-image: radial-gradient(#888FA7 5%,transparent 11%);
-      background-color: transparent;
-      opacity: .6;
       z-index: -1;
+      width: 40%;
+      height: 100%;
+      content: "";
+      background-color: transparent;
+      background-image: radial-gradient(#888fa7 5%,transparent 11%);
+      background-size: 12px 12px;
+      opacity: .6;
     }
   }
   &__intro {
     position: relative;
-    margin: auto;
-    padding: 0 25px;
     max-width: 1460px;
+    padding: 0 25px;
+    margin: auto;
     @include breakPC() {
       padding: 0 60px;
     }
     &::before {
-      content: "";
-      width: 1px;
-      height: 100%;
-      background-color: $FONT_COLOR;
       position: absolute;
       left: 6px;
+      width: 1px;
+      height: 100%;
+      content: "";
+      background-color: $FONT_COLOR;
       @include breakPC() {
         left: 30px;
       }
     }
     &::after {
-      content: "";
-      width: 15px;
-      height: 1px;
-      background-color: $FONT_COLOR;
       position: absolute;
       bottom: 5px;
       left: 4.5px;
+      width: 15px;
+      height: 1px;
+      content: "";
+      background-color: $FONT_COLOR;
       transform: rotate(-45deg);
       @include breakPC() {
         left: 28px;
       }
     }
     &__inner {
-      padding: 0 40px;
       position: relative;
+      padding: 0 40px;
       @include contentWidth();
     }
   }
   &__secHdg {
-    font-size: 1rem;
-    font-family: $FONT_FAMILY_DIDACT;
     position: absolute;
     top: 55px;
     left: -30px;
+    font-family: $FONT_FAMILY_DIDACT;
+    font-size: 1rem;
     transform: rotate(90deg);
     @include breakPC() {
-      font-size: 1.1rem;
       left: 0px;
+      font-size: 1.1rem;
     }
   }
   &__service {
     margin-top: 50px;
     @include breakPC() {
-      margin-top: 80px;
       display: flex;
       justify-content: flex-start;
+      margin-top: 80px;
     }
     &__item {
-      color: #fff;
-      padding: 40px 20px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       position: relative;
+      padding: 40px 20px;
+      color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
       @include breakPC() {
         display: flex;
+        flex: 1 1 100%;
         flex-direction: column;
         justify-content: space-around;
-        flex: 1 1 100%;
         padding: 80px 40px 40px;
       }
       &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        background-color: #505050;
-        opacity: .5;
-        margin: auto;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         z-index: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        content: "";
+        background-color: #505050;
+        opacity: .5;
       }
       &.of-bgRecruit {
-        background-image: url('../images/top_index_01.jpg');
+        background-image: url("../images/top_index_01.jpg");
       }
       &.of-bgCorporate {
-        background-image: url('../images/top_index_02.jpg');
+        background-image: url("../images/top_index_02.jpg");
       }
       &.of-bgProduct {
-        background-image: url('../images/top_index_03.jpg');
+        background-image: url("../images/top_index_03.jpg");
       }
       > * {
         position: relative;
       }
     }
     &__hdg {
+      margin-bottom: 20px;
       font-size: 1.8rem;
       text-align: center;
-      margin-bottom: 20px;
       @include breakPC() {
-        font-size: 2.8rem;
         margin-bottom: 40px;
+        font-size: 2.8rem;
       }
     }
   }
@@ -332,12 +332,12 @@
   position: relative;
   &::before {
     @include backDot();
-    content: "";
     position: absolute;
-    width: 100%;
-    height: calc(40% + 60px);
     bottom: -60px;
     left: 0;
+    width: 100%;
+    height: calc(40% + 60px);
+    content: "";
   }
   .chosenCol {
     margin-top: 30px;
@@ -358,73 +358,73 @@
       }
     }
     .chosenBox {
-      background-color: #fff;
+      position: relative;
       padding: 120px 20px 30px;
+      background-color: #fff;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,.16);
-      position: relative;
       @include breakPC() {
         padding: 240px 30px 40px;
       }
       &__hdg {
+        padding: 0 6px;
+        margin-bottom: 20px;
         font-size: 1.8rem;
         text-align: center;
-        margin-bottom: 20px;
-        padding: 0 6px;
         @include breakPC() {
-          font-size: 2rem;
           margin-bottom: 40px;
+          font-size: 2rem;
         }
       }
       &.choseIcon-plan,
       &.choseIcon-service,
       &.choseIcon-work {
         &::before {
-          content: "";
           position: absolute;
           right: 0;
           left: 0;
           margin: auto;
+          content: "";
           background-repeat: no-repeat;
           background-size: contain;
         }
       }
       &.choseIcon-plan {
         &::before {
+          top: 50px;
           width: 72px;
           height: 50px;
-          top: 50px;
-          background-image: inline('top_index_icon-01.svg');
+          background-image: inline("top_index_icon-01.svg");
           @include breakPC(){
+            top: 100px;
             width: 124px;
             height: 80px;
-            top: 100px;
           }
         }
       }
       &.choseIcon-service {
         &::before {
+          top: 40px;
           width: 58px;
           height: 60px;
-          background-image: inline('top_index_icon-02.svg');
-          top: 40px;
+          background-image: inline("top_index_icon-02.svg");
           @include breakPC(){
+            top: 90px;
             width: 83px;
             height: 87px;
-            top: 90px;
           }
         }
       }
       &.choseIcon-work {
         &::before {
+          top: 40px;
           width: 53px;
           height: 65px;
-          background-image: inline('top_index_icon-03.svg');
-          top: 40px;
+          background-image: inline("top_index_icon-03.svg");
           @include breakPC(){
+            top: 93px;
             width: 80px;
             height: 98px;
-            top: 93px;
           }
         }
       }
@@ -448,8 +448,8 @@
     &__item {
       @include breakSP() {
         &:nth-of-type(n+2){
-          margin-top: 20px;
           padding-top: 20px;
+          margin-top: 20px;
           border-top: 1px dotted #ccc;
         }
       }
@@ -467,16 +467,16 @@
     dd {
       position: relative;
       &::before {
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 28px;
         height: 28px;
-        font-size: 1.4rem;
-        line-height: 1;
-        font-weight: 600;
         font-family: $FONT_FAMILY_DIDACT;
-        position: absolute;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1;
         border-radius: 50%;
         @include breakPC() {
           width: 40px;
@@ -486,36 +486,36 @@
       }
     }
     dt {
-      font-size: 1.4rem;
       padding: 9px 0 9px 40px;
+      font-size: 1.4rem;
       @include breakPC() {
-        font-size: 1.6rem;
         padding: 9px 0 9px 60px;
+        font-size: 1.6rem;
       }
       &::before {
-        content: "Q";
-        color: #fff;
-        background-color: $BG_COLOR;
         top: 0;
         bottom: 0;
         left: 0;
         margin: auto;
+        color: #fff;
+        content: "Q";
+        background-color: $BG_COLOR;
       }
     }
     dd {
-      margin-top: 15px;
       padding-left: 40px;
+      margin-top: 15px;
       @include breakPC() {
-        margin-top: 50px;
         padding-left: 60px;
+        margin-top: 50px;
       }
       &::before {
-        content: "A";
-        background-color: #fff;
-        border: 1px solid $BG_COLOR;
         position: absolute;
         top: 0;
         left: 0;
+        content: "A";
+        background-color: #fff;
+        border: 1px solid $BG_COLOR;
         border-radius: 50%;
       }
     }
@@ -527,25 +527,25 @@
 // .top-case
 // ----------------------------
 .top-case {
-  padding-bottom: 60px;
   position: relative;
+  padding-bottom: 60px;
 
   @include breakPC() {
     padding-bottom: 80px;
   }
 
   &::before {
-    content: "";
     position: absolute;
-    width: 50%;
-    height: calc(65% + 80px);
     bottom: 0;
     left: 0;
-    background-size: 12px 12px;
-    background-image: radial-gradient(#888FA7 5%,transparent 11%);
-    background-color: transparent;
-    opacity: .6;
     z-index: -1;
+    width: 50%;
+    height: calc(65% + 80px);
+    content: "";
+    background-color: transparent;
+    background-image: radial-gradient(#888fa7 5%,transparent 11%);
+    background-size: 12px 12px;
+    opacity: .6;
     @include breakPC() {
       bottom: -80px;
     }
@@ -569,8 +569,8 @@
         margin-top: 30px;
       }
       @include breakPC() {
-        margin-left: 70px;
         width: calc(50% - 70px);
+        margin-left: 70px;
         &:nth-of-type(n+2) {
           margin-top: 0;
         }
@@ -593,8 +593,8 @@
           }
         }
         .top-btnLink {
-          text-align: right;
           margin-top: 10px;
+          text-align: right;
           @include breakPC() {
             margin-top: 30px;
           }

@@ -13,9 +13,9 @@
         }
 
         &__list {
-            margin: 0;
             display: flex;
             flex-wrap: wrap;
+            margin: 0;
 
             li {
                 font-size: 1.2rem;
@@ -34,14 +34,14 @@
 
                     &::before {
                         @include iconArrow(45, $FONT_COLOR);
-                        width: 6px;
-                        height: 6px;
-                        content: "";
                         position: absolute;
                         top: 0;
                         bottom: 0;
                         left: -19px;
+                        width: 6px;
+                        height: 6px;
                         margin: auto;
+                        content: "";
                     }
                 }
 

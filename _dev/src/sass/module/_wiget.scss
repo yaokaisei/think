@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+/* ------------------------------------
+ * .mod-disclosure-faq
+ * --------------------------------- */
+.mod-disclosure-faq {
+    margin: 30px 0;
+
+    @include breakPC() {
+        margin: 20px 0;
+    }
+
+    > .item {
+        padding: 0 0 15px;
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ccc;
+
+        @include breakPC() {
+            font-size: 1.6rem;
+        }
+
+        + .item {
+            padding: 15px 0;
+        }
+
+        > dt,
+        > dd {
+            > .content {
+                position: relative;
+                padding: 15px 0 15px 40px;
+
+                @include breakPC() {
+                    padding: 18px 0 18px 50px;
+                }
+
+                // クエスチョンマーク、アンサーマーク共通スタイル
+                &::before {
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    font-weight: 700;
+                    border-radius: 4px;
+
+                    @include breakPC() {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+
+        > dt {
+            > .content {
+                font-weight: 700;
+
+                // クエスチョンマーク
+                &::before {
+                    color: #fff;
+                    content: "Q";
+                    background-color: $ACCENT_COLOR;
+                    border: 1px solid $ACCENT_COLOR;
+                }
+            }
+        }
+
+        > dd {
+            > .content {
+                // クエスチョンマーク
+                &::before {
+                    color: $ACCENT_COLOR;
+                    content: "A";
+                    background-color: #fff;
+                    border: 1px solid $ACCENT_COLOR;
+                }
+            }
+        }
+    }
+
+    // ディスクロージャー機能
+    &.js-disclosure {
+        @include js-on() {
+            > .item {
+                > dt {
+                    position: relative;
+                    padding-right: 40px;
+                    cursor: pointer;
+
+                    @include breakPC() {
+                        padding-right: 70px;
+                    }
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        top: 50%;
+                        content: "";
+                        background-color: $ACCENT_COLOR;
+                        transition: transform .25s ease-out;
+                    }
+
+                    &::before {
+                        right: 10px;
+                        width: 10px;
+                        height: 2px;
+                        margin-top: -1px;
+                    }
+
+                    &::after {
+                        right: 14px;
+                        width: 2px;
+                        height: 10px;
+                        margin-top: -5px;
+                    }
+
+                    &[aria-expanded="true"] {
+                        &::before {
+                            transform: rotate(180deg);
+                        }
+
+                        &::after {
+                            transform: rotate(90deg);
+                        }
+
+                        + dd {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                > dd {
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: height .3s ease-out,
+                                opacity .25s ease-out,
+                                visibility .3s ease-out;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* ------------------------------------
+// link icon
+ * --------------------------------- */
+[href] {
+    [class*="icon-"] {
+        display: inline-block;
+        margin: 0 10px 0 5px;
+    }
+
+    .icon-blank {
+        width: 12px;
+        height: 12px;
+        fill: $ACCENT_COLOR;
+    }
+
+    .icon-pdf {
+        rect {
+            fill: $ATTENTION_COLOR;
+        }
+        path {
+            fill: #fff;
+        }
+        width: 26px;
+        height: 16px;
+        margin-bottom: -2px;
+    }
+
+    .icon-zip {
+        g {
+            fill: #fff;
+            stroke: $ACCENT_COLOR;
+        }
+        width: 26px;
+        height: 16px;
+        margin-bottom: -2px;
+        fill: $ACCENT_COLOR;
+    }
+}

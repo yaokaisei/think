@@ -3,19 +3,19 @@
 .m-hdgSubtxt {
   margin: 40px 0 30px;
   font-size: 4rem;
-  line-height: 1.4;
   font-weight: bold;
+  line-height: 1.4;
 
   @include breakPC() {
-    font-size: 6.6rem;
     margin: 70px 0 50px;
+    font-size: 6.6rem;
   }
 
   > span {
-    display: block;
-    font-size: 1.4rem;
     position: relative;
+    display: block;
     padding: 0 0 10px;
+    font-size: 1.4rem;
     font-weight: normal;
 
     @include breakSP() {
@@ -23,13 +23,13 @@
     }
 
     &::before {
-      content: "";
-      width: 80px;
-      height: 1px;
-      background: $FONT-COLOR;
       position: absolute;
       bottom: 0;
       left: 0;
+      width: 80px;
+      height: 1px;
+      content: "";
+      background: $FONT-COLOR;
 
       @include breakSP() {
         width: 30px;
@@ -39,34 +39,34 @@
 }
 
 .m-hdgUnderline {
-  font-size: 2.2rem;
-  margin: 40px 0 30px;
   padding-bottom: 10px;
+  margin: 40px 0 30px;
+  font-size: 2.2rem;
   border-bottom: 1px solid $BORDER-COLOR;
 
   @include breakPC() {
-    font-size: 3rem;
-    margin: 60px 0 40px;
     padding-bottom: 18px;
+    margin: 60px 0 40px;
+    font-size: 3rem;
   }
 }
 
 .m-hdgVerticallin {
   position: relative;
-  font-size: 1.8rem;
   padding-left: 14px;
   margin: 30px 0 20px;
+  font-size: 1.8rem;
 
   @include breakPC() {
     font-size: 2rem;
   }
 
   &::before {
-    content: "";
     position: absolute;
     left: 0;
     width: 4px;
     height: 100%;
+    content: "";
     background-color: $BG_COLOR;
   }
 }

@@ -90,8 +90,8 @@
 
   dt {
     margin-top: 20px;
-    font-weight: bold;
     font-size: 16px;
+    font-weight: bold;
 
     @include breakSP {
       font-size: 14px;
@@ -100,8 +100,8 @@
 
   dd {
     @include resetMargin();
-    margin-top: 5px;
     padding-left: 10px;
+    margin-top: 5px;
   }
 }
 

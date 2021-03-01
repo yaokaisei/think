@@ -13,29 +13,29 @@
   }
 
   a {
+    position: relative;
     display: inline-block;
     padding: 18px 48px;
     line-height: 1;
-    background: #fff;
     color: $FONT_COLOR;
-    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    background: #fff;
     border: 1px solid FONT_COLOR;
     border-radius: 30px;
-    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
     transition: background-color $TRANSITION,
                 box-shadow $TRANSITION,
                 color $TRANSITION;
 
     &::before {
       @include iconArrow(45, $FONT_COLOR);
-      content: "";
       position: absolute;
       top: 0;
-      bottom: 0;
       right: 15px;
+      bottom: 0;
       width: 6px;
       height: 6px;
       margin: auto;
+      content: "";
       transition: border-color $TRANSITION;
     }
 
@@ -61,15 +61,15 @@
     margin: 30px auto;
 
     a {
+      position: relative;
       display: flex;
       flex-direction: column-reverse;
       justify-content: flex-end;
       height: 100%;
       padding: 0 0 50px;
-      text-decoration: none;
       color: $FONT-COLOR;
+      text-decoration: none;
       background: #fff;
-      position: relative;
       box-shadow: 0 10px 15px rgba(0,0,0,.15);
       transition: box-shadow .3s;
 
@@ -79,12 +79,12 @@
 
       &::before {
         @include iconArrow(45, $BG_COLOR);
-        content: "";
         position: absolute;
-        bottom: 20px;
         right: 20px;
+        bottom: 20px;
         width: 10px;
         height: 10px;
+        content: "";
 
         @include breakPC() {
           width: 18px;
@@ -105,8 +105,8 @@
 
     &__contents {
       @include resetMargin();
-      margin-top: 30px;
       padding: 0 30px;
+      margin-top: 30px;
 
       > * {
         margin-bottom: 20px;
@@ -114,8 +114,8 @@
     }
 
     &__img {
-      line-height: 0;
       overflow: hidden;
+      line-height: 0;
 
       img {
         transition: transform .3s;
